@@ -7,6 +7,7 @@ public class Win {
         for (int i = 0; i < board.length; i++) {
             if (board[i][i] == 1) {
                 result = checkHorizontal(board, i) || checkVertical(board, i);
+                break;
             }
         }
         return result;
@@ -14,7 +15,7 @@ public class Win {
 
     public static boolean checkHorizontal(int[][] board, int index) {
         boolean result = true;
-        for (int i = index; i < board[index].length; i++) {
+        for (int i = 0; i < board[index].length; i++) {
             if (board[index][i] != 1) {
                 result = false;
                 break;
